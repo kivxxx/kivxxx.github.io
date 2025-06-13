@@ -427,11 +427,29 @@ footer .container {
     font-weight: 700;
 }
 
-.about-intro {
+/* DIY页面样式 */
+#diy-hero {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--soft-green) 100%);
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+#diy-hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#diy-hero .hero-description {
     font-size: 1.2rem;
-    opacity: 0.9;
+    margin-bottom: 40px;
+    opacity: 0.95;
     max-width: 600px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .story-content {
@@ -820,36 +838,39 @@ footer .container {
 }
 
 .tool-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 15px;
     text-align: center;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--border-color);
     transition: all 0.3s ease;
-    color: white;
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .tool-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: var(--bg-secondary);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+    border-color: var(--accent-color);
 }
 
 .tool-card i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #FFD700;
+    color: var(--accent-color);
 }
 
 .tool-card h4 {
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .tool-card p {
     font-size: 0.9rem;
-    opacity: 0.9;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -862,18 +883,20 @@ footer .container {
 }
 
 .tip-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
     padding: 1.5rem;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--border-color);
     transition: all 0.3s ease;
-    color: white;
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .tip-card:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--bg-secondary);
+    box-shadow: 0 12px 25px var(--shadow-medium);
+    border-color: var(--accent-color);
 }
 
 .tip-card h4 {
@@ -882,16 +905,18 @@ footer .container {
     align-items: center;
     gap: 0.5rem;
     font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .tip-card h4 i {
-    color: #FFD700;
+    color: var(--accent-color);
     font-size: 1.2rem;
 }
 
 .tip-card p {
     line-height: 1.6;
-    opacity: 0.9;
+    color: var(--text-secondary);
 }
 
 /* 学�??�签?��? */
@@ -1272,191 +1297,163 @@ nav a.active {
 }
 
 /* 載入?�畫 */
+/* 載入動畫樣式 */
 .loading-spinner {
-    display: inline-block;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    border-top-color: white;
-    animation: spin 1s ease-in-out infinite;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* ?��?式設�?*/
+/* 專案列表樣式 */
+.project-list {
+    padding: 60px 40px;
+}
+
+.project-list h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.project-list h3 i {
+    color: var(--accent-color);
+}
+
+.loading-container {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+}
+
+.loading-spinner {
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* DIY專案卡片樣式 */
+.diy-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.diy-projects .project-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.diy-projects .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+/* 響應式設計改進 */
 @media (max-width: 768px) {
-    .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .filter-buttons {
-        justify-content: center;
-    }
-    
-    .sort-controls {
-        justify-content: center;
-    }
-    
-    header .container {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    nav ul {
-        gap: 15px;
+    /* Hero sections 響應式調整 */
+    #hero, #about-hero, #project-hero, #diy-hero {
+        padding: 60px 20px;
     }
     
     .hero-content h2 {
         font-size: 2rem;
     }
     
-    .hero-description {
-        font-size: 1rem;
-    }
-    
-    section {
-        padding: 40px 20px;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .updates-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .update-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .contact-links {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .skills-category {
-        padding: 20px;
-    }
-    
-    .interests-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .learning-tags {
-        justify-content: center;
-    }
-    
-    #about-hero h2,    #project-hero h2 {
+    #about-hero h2,
+    #project-hero h2,
+    #diy-hero h2 {
         font-size: 2rem;
     }
     
+    .hero-description,
+    #diy-hero .hero-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    /* 工具網格和提示內容響應式 */
     .tools-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .tips-content {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
-    #diy-hero h2 {
+    /* 專案列表響應式 */
+    .project-list {
+        padding: 40px 20px;
+    }
+    
+    .diy-projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* 技能卡片響應式 */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* 更新卡片響應式 */
+    .updates-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* 工具卡片和提示卡片小屏幕優化 */
+    .tool-card,
+    .tip-card {
+        padding: 1rem;
+    }
+    
+    .tool-card i {
         font-size: 2rem;
     }
-}
-
-/* ?�蘭迪色調�??�改?�樣�?*/
-/* 確�??��?對�?度�??��???*/
-.project-grid .project-card,
-.diy-projects .project-card,
-.updates-grid .update-card {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    box-shadow: 0 6px 20px var(--shadow-light);
-}
-
-.project-grid .project-card:hover,
-.diy-projects .project-card:hover,
-.updates-grid .update-card:hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 12px 30px var(--shadow-medium);
-}
-
-/* 確�??��??�足夠�?比度 */
-.btn, .project-link, .cta-button {
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-/* ?��?強調?�彩 */
-.featured, .highlight {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-primary) 100%);
-    border: 2px solid var(--accent-color);
-}
-
-/* ?��??��??��? */
-::selection {
-    background: var(--accent-color);
-    color: white;
-}
-
-::-moz-selection {
-    background: var(--accent-color);
-    color: white;
-}
-
-/* ?�進表?��?素�?比度 */
-input, textarea, select {
-    background: var(--bg-secondary);
-    border: 2px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 12px;
-    border-radius: 8px;
-}
-
-input:focus, textarea:focus, select:focus {
-    border-color: var(--accent-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(139, 157, 195, 0.1);
-}
-
-/* ?�進錯誤�?示樣�?*/
-.error-message {
-    background: var(--soft-pink);
-    color: var(--text-primary);
-    border: 2px solid #c8a2a2;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-}
-
-.success-message {
-    background: var(--soft-green);
-    color: var(--text-primary);
-    border: 2px solid #a8b5a0;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
+    
+    /* 按鈕響應式 */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        min-width: 200px;
+        text-align: center;
+    }
 }
