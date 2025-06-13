@@ -14,7 +14,7 @@
       "image": "",
       "links": {
         "demo": "",
-        "github": "https://github.com/kivxx/temp-monitor",
+        "github": "https://github.com/kivxxx/temp-monitor",
         "documentation": ""
       },
       "featured": false
@@ -52,7 +52,7 @@
       "image": "",
       "links": {
         "demo": "",
-        "github": "https://github.com/kivxx/led-controller",
+        "github": "https://github.com/kivxxx/led-controller",
         "documentation": ""
       },
       "featured": false
@@ -90,7 +90,7 @@
       "image": "",
       "links": {
         "demo": "",
-        "github": "https://github.com/kivxx/file-organizer",
+        "github": "https://github.com/kivxxx/file-organizer",
         "documentation": ""
       },
       "featured": true
@@ -107,9 +107,8 @@
       "category": "web",
       "icon": "fas fa-tasks",
       "image": "",
-      "links": {
-        "demo": "https://kivxx.github.io/task-manager",
-        "github": "https://github.com/kivxx/task-manager",
+      "links": {        "demo": "https://kivxxx.github.io/task-manager",
+        "github": "https://github.com/kivxxx/task-manager",
         "documentation": ""
       },
       "featured": true
@@ -128,7 +127,7 @@
       "image": "",
       "links": {
         "demo": "",
-        "github": "https://github.com/kivxx/price-tracker",
+        "github": "https://github.com/kivxxx/price-tracker",
         "documentation": ""
       },
       "featured": false
@@ -145,9 +144,8 @@
       "category": "web",
       "icon": "fas fa-wallet",
       "image": "",
-      "links": {
-        "demo": "https://kivxx.github.io/expense-tracker",
-        "github": "https://github.com/kivxx/expense-tracker",
+      "links": {        "demo": "https://kivxxx.github.io/expense-tracker",
+        "github": "https://github.com/kivxxx/expense-tracker",
         "documentation": ""
       },
       "featured": true
@@ -166,7 +164,7 @@
       "image": "",
       "links": {
         "demo": "",
-        "github": "https://github.com/kivxx/image-processor",
+        "github": "https://github.com/kivxxx/image-processor",
         "documentation": ""
       },
       "featured": false
@@ -183,9 +181,8 @@
       "category": "web",
       "icon": "fab fa-node-js",
       "image": "",
-      "links": {
-        "demo": "https://kivxx-blog.herokuapp.com",
-        "github": "https://github.com/kivxx/blog-system",
+      "links": {        "demo": "https://kivxxx-blog.herokuapp.com",
+        "github": "https://github.com/kivxxx/blog-system",
         "documentation": ""
       },
       "featured": false

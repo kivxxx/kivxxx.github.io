@@ -1,11 +1,11 @@
 # GitHub Pages 網站配置
 
 # 主要設定
-title: "Kivxx - 個人網站"
+title: "Kivxxx - 個人網站"
 description: "分享 DIY 專案和程式作品的個人網站"
 author: "Kiv"
-url: "https://kivxx.github.io"
-baseurl: "/kivxx.github.io"
+url: "https://kivxxx.github.io"
+baseurl: ""
 
 # GitHub Pages 設定
 plugins:
@@ -40,4 +40,4 @@ logo: photo.png
 social:
   name: Kiv
   links:
-    - https://github.com/kivxx
+    - https://github.com/kivxxx

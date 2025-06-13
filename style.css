@@ -1,27 +1,27 @@
-/* ?��??��? - ?�蘭迪色�?*/
+/* 全域樣式 - 莫蘭迪色調 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ?�蘭迪色彩�???*/
+/* 莫蘭迪色彩變數 */
 :root {
-    --primary-color: #9b9b9b;          /* 主�??�色 */
-    --secondary-color: #b8a58a;        /* ?��???*/
-    --accent-color: #8b9dc3;           /* ?��??�色 */
-    --soft-green: #a8b5a0;             /* ?��?綠色 */
-    --soft-pink: #c8a2a2;              /* ?��?粉色 */
-    --soft-yellow: #d4c4a0;            /* ?��?黃色 */
-    --text-primary: #4a4a4a;           /* 主�??��? */
-    --text-secondary: #666666;         /* 次�??��? */
-    --text-light: #888888;             /* 淺色?��? */
-    --bg-primary: #f7f6f4;             /* 主�??�景 */
-    --bg-secondary: #ffffff;           /* 次�??�景 */
-    --bg-card: rgba(255, 255, 255, 0.9); /* ?��??�景 */
-    --border-color: #e6e4e0;           /* ?��?顏色 */
-    --shadow-light: rgba(0, 0, 0, 0.08); /* 淺色?�影 */
-    --shadow-medium: rgba(0, 0, 0, 0.12); /* 中�??�影 */
+    --primary-color: #9b9b9b;          /* 主要灰色 */
+    --secondary-color: #b8a58a;        /* 溫暖土色 */
+    --accent-color: #8b9dc3;           /* 柔和藍色 */
+    --soft-green: #a8b5a0;             /* 柔和綠色 */
+    --soft-pink: #c8a2a2;              /* 柔和粉色 */
+    --soft-yellow: #d4c4a0;            /* 柔和黃色 */
+    --text-primary: #4a4a4a;           /* 主要文字 */
+    --text-secondary: #666666;         /* 次要文字 */
+    --text-light: #888888;             /* 淺色文字 */
+    --bg-primary: #f7f6f4;             /* 主要背景 */
+    --bg-secondary: #ffffff;           /* 次要背景 */
+    --bg-card: rgba(255, 255, 255, 0.9); /* 卡片背景 */
+    --border-color: #e6e4e0;           /* 邊框顏色 */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* 淺色陰影 */
+    --shadow-medium: rgba(0, 0, 0, 0.12); /* 中等陰影 */
 }
 
 body {
@@ -38,7 +38,7 @@ body {
     padding: 0 20px;
 }
 
-/* 导航?�样�?*/
+/* 導航列樣式 */
 header {
     background: var(--bg-card);
     backdrop-filter: blur(10px);
@@ -87,7 +87,7 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* 主�??�容?��? */
+/* 主要內容區域 */
 main {
     background: var(--bg-secondary);
     margin: 20px auto;
@@ -98,7 +98,7 @@ main {
     border: 1px solid var(--border-color);
 }
 
-/* Hero ?�??*/
+/* Hero 區塊 */
 #hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -188,7 +188,7 @@ main {
     color: var(--accent-color);
 }
 
-/* ?�段樣�?*/
+/* 區段樣式 */
 section {
     padding: 60px 40px;
     border-bottom: 1px solid var(--border-color);
@@ -214,7 +214,7 @@ section h3 i {
     color: var(--accent-color);
 }
 
-/* ?�?��???*/
+/* 技能格線 */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
