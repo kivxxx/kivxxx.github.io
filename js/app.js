@@ -88,6 +88,9 @@ class App {
         this.animateSkillTags();
     }    // 初始化DIY页面
     async initDiyPage() {
+        // 設定 body class 以便分色
+        document.body.classList.add('diy-page');
+        document.body.classList.remove('project-page');
         // 初始化專案管理器
         if (typeof projectManager !== 'undefined') {
             await projectManager.init();
@@ -98,6 +101,9 @@ class App {
 
     // 初始化項目頁面
     async initProjectPage() {
+        // 設定 body class 以便分色
+        document.body.classList.add('project-page');
+        document.body.classList.remove('diy-page');
         // 初始化專案管理器
         if (typeof projectManager !== 'undefined') {
             await projectManager.init();

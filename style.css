@@ -7,28 +7,33 @@
 
 /* 莫蘭迪色彩變數 */
 :root {
-    --primary-color: #9b9b9b;          /* 主要灰色 */
-    --secondary-color: #b8a58a;        /* 溫暖土色 */
-    --accent-color: #8b9dc3;           /* 柔和藍色 */
+    /* 高級深色莫蘭迪色系 */
+    --primary-color: #444654;          /* 主色 深灰藍紫 */
+    --secondary-color: #5c5f6e;        /* 副色 深灰藍紫偏暖 */
+    --accent-color: #7b8fa6;           /* 強調色 莫蘭迪藍灰 */
     --soft-green: #a8b5a0;             /* 柔和綠色 */
     --soft-pink: #c8a2a2;              /* 柔和粉色 */
     --soft-yellow: #d4c4a0;            /* 柔和黃色 */
-    --text-primary: #4a4a4a;           /* 主要文字 */
-    --text-secondary: #666666;         /* 次要文字 */
-    --text-light: #888888;             /* 淺色文字 */
-    --bg-primary: #f7f6f4;             /* 主要背景 */
-    --bg-secondary: #ffffff;           /* 次要背景 */
-    --bg-card: rgba(255, 255, 255, 0.9); /* 卡片背景 */
-    --border-color: #e6e4e0;           /* 邊框顏色 */
-    --shadow-light: rgba(0, 0, 0, 0.08); /* 淺色陰影 */
-    --shadow-medium: rgba(0, 0, 0, 0.12); /* 中等陰影 */
+    --text-primary: #f3f3f3;           /* 主要文字 白灰 */
+    --text-secondary: #b0b3bb;         /* 次要文字 莫蘭迪灰藍 */
+    --text-light: #8a8d99;             /* 較淡文字 */
+    --bg-primary: #23242b;             /* 主要背景 深灰藍 */
+    --bg-secondary: #2d2e36;           /* 次要背景 深灰藍紫 */
+    --bg-card: #2e3038;                /* 卡片背景 深灰藍紫 */
+    --border-color: #393a44;           /* 邊框 深灰 */
+    --shadow-light: rgba(0,0,0,0.18);  /* 淺色陰影 */
+    --shadow-medium: rgba(0,0,0,0.28); /* 中等陰影 */
+    --diy-primary-color: #3a5a4b;      /* DIY主色 深莫蘭迪綠 */
+    --diy-accent-color: #5b7d6b;       /* DIY accent 深綠灰 */
+    --project-primary-color: #4a4e69;  /* Project主色 深莫蘭迪藍紫 */
+    --project-accent-color: #7b6d8d;   /* Project accent 深紫灰 */
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background: linear-gradient(135deg, #f7f6f4 0%, #e8e6e0 100%);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     min-height: 100vh;
 }
 
@@ -99,11 +104,16 @@ main {
 }
 
 /* Hero 區塊 */
-#hero {
+#hero, #diy-hero, #project-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     padding: 80px 40px;
     text-align: center;
+}
+#hero h2, #diy-hero h2, #project-hero h2,
+#hero i, #diy-hero i, #project-hero i {
+    color: #fff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
 }
 
 .hero-content h2 {
@@ -413,31 +423,53 @@ footer .container {
     font-weight: 500;
 }
 
-/* About页面? */
+/* About頁面 hero 區塊統一 */
 #about-hero {
-    background: linear-gradient(135deg, var(--accent-color) 0%, #764ba2 100%);
+    /* 用全站 hero 樣式 */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     padding: 80px 40px;
     text-align: center;
 }
-
-#about-hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 700;
+#about-hero h2, #about-hero i {
+    color: #fff !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.25);
 }
 
-/* About頁面特定樣式 */
-#about-hero .about-content {
-    max-width: 800px;
-    margin: 0 auto;
+/* 關於我頁面卡片、tag、區塊統一全站樣式 */
+.skill-category, .boxed-section, .interest-card, .value-item {
+    background: var(--bg-card);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px var(--shadow-light);
+    border: 2px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+}
+.skill-category:hover, .interest-card:hover, .value-item:hover {
+    box-shadow: 0 12px 32px var(--shadow-medium);
+    border-color: var(--accent-color);
+    transform: translateY(-4px) scale(1.02);
+}
+.skill-tag {
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+    border: 1.5px solid var(--accent-color);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0.3rem 0.5rem 0;
+    padding: 0.3rem 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+.skill-tag:hover {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--primary-color);
 }
 
-#about-hero .profile-container {
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
+/* 關於我頁面標題、icon、描述、tag、卡片內部結構統一 */
 #about-hero .profile-photo {
     width: 180px;
     height: 180px;
@@ -447,37 +479,33 @@ footer .container {
     border: 4px solid rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 #about-hero .profile-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
-
 #about-hero .profile-photo:hover img {
     transform: scale(1.1);
 }
 
-.about-intro {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-    opacity: 0.95;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* 故事內容樣式 */
-.story-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.story-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+/* 關於我頁面其他細節統一 */
+.story-content p, .contact-info p, .philosophy-content p {
     color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+blockquote {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 15px 15px 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 /* 技能分類樣式 */
@@ -552,55 +580,6 @@ footer .container {
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 1.1rem;
-}
-
-/* Code页面样式 */
-#project-hero,
-#diy-hero { /* Added #diy-hero here */
-    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
-    color: white;
-    padding: 80px 40px;
-    text-align: center;
-}
-
-#project-hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-#project-hero .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    opacity: 0.95;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* DIY專案卡片樣式 */
-.diy-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Changed from 350px */
-    gap: 30px;
-    margin-top: 40px; /* Changed from 30px */
-}
-
-.diy-projects .project-card {
-    background: var(--bg-card);
-    border: 2px solid var(--border-color);
-    border-radius: 15px;
-    padding: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px var(--shadow-light);
-}
-
-.diy-projects .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px var(--shadow-medium);
-    border-color: var(--accent-color);
 }
 
 /* 響應式設計改進 */
@@ -1184,7 +1163,7 @@ footer .container {
 
 /* 引用樣式 */
 blockquote {
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
     border-left: 4px solid var(--accent-color);
     padding: 1.5rem 2rem;
     margin: 2rem 0;
@@ -1236,115 +1215,262 @@ blockquote {
     margin-top: 1rem;
 }
 
-/* --- DIY/專案分類篩選器美化 --- */
+/* ===== 篩選區美化與分色 ===== */
 .project-filter {
-    margin: 30px 0 20px 0;
+    margin: 2rem 0 1.5rem 0;
+    padding: 1.2rem 1.5rem;
+    background: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px var(--shadow-light);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    gap: 1rem;
 }
-.filter-controls {
+
+.project-filter .filter-controls {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: 1.5rem;
 }
+
 .filter-buttons {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.5rem;
 }
+
 .filter-btn {
+    border: none;
+    outline: none;
     background: var(--bg-primary);
-    color: var(--primary-color);
-    border: 1.5px solid var(--border-color);
+    color: var(--diy-primary-color);
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
     border-radius: 20px;
-    padding: 7px 18px;
     font-size: 1rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 7px;
     cursor: pointer;
     transition: all 0.2s;
-    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 1px 4px var(--shadow-light);
 }
-.filter-btn.active, .filter-btn:hover {
-    background: var(--accent-color);
-    color: #fff;
-    border-color: var(--accent-color);
+
+/* DIY分頁專屬色 */
+body.diy-page .filter-btn {
+    color: var(--diy-primary-color);
+    border: 2px solid var(--diy-primary-color);
+    background: var(--bg-primary);
 }
+body.diy-page .filter-btn.active,
+body.diy-page .filter-btn:hover {
+    background: var(--diy-primary-color);
+    color: white;
+}
+
+/* Project分頁專屬色 */
+body.project-page .filter-btn {
+    color: var(--project-primary-color);
+    border: 2px solid var(--project-primary-color);
+    background: var(--bg-primary);
+}
+body.project-page .filter-btn.active,
+body.project-page .filter-btn:hover {
+    background: var(--project-primary-color);
+    color: white;
+}
+
 .sort-controls {
-    margin-left: 10px;
+    margin-left: auto;
 }
 .sort-select {
-    border-radius: 15px;
-    border: 1.5px solid var(--border-color);
-    padding: 6px 14px;
+    border: 2px solid var(--diy-primary-color);
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
     font-size: 1rem;
     background: var(--bg-primary);
-    color: var(--primary-color);
+    color: var(--diy-primary-color);
+    transition: border 0.2s;
+}
+body.project-page .sort-select {
+    border-color: var(--project-primary-color);
+    color: var(--project-primary-color);
+}
+body.diy-page .sort-select:focus,
+body.project-page .sort-select:focus {
     outline: none;
+    border-width: 2.5px;
+}
+
+/* ===== 卡片分色 ===== */
+body.diy-page .project-item, body.diy-page .project-card {
+    border: 2px solid var(--diy-primary-color);
+}
+body.diy-page .project-item:hover, body.diy-page .project-card:hover {
+    border-color: var(--diy-accent-color);
+    box-shadow: 0 8px 24px var(--diy-accent-color);
+}
+body.project-page .project-item, body.project-page .project-card {
+    border: 2px solid var(--project-primary-color);
+}
+body.project-page .project-item:hover, body.project-page .project-card:hover {
+    border-color: var(--project-accent-color);
+    box-shadow: 0 8px 24px var(--project-accent-color);
+}
+
+/* ===== 響應式調整 ===== */
+@media (max-width: 600px) {
+    .project-filter {
+        padding: 0.7rem 0.5rem;
+    }
+    .filter-btn {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.7rem;
+    }
+    .sort-select {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.7rem;
+    }
+}
+
+/* ===== 統一按鈕樣式 ===== */
+.btn, .filter-btn, .sort-select, .project-link, .feature-tag, .skill-tag, .learning-tag {
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: all 0.2s;
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn, .filter-btn, .project-link {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-primary, .filter-btn.active, .project-link.demo, .learning-tag {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: #fff;
+    border: none;
+}
+
+.btn-secondary, .filter-btn, .project-link.github {
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-primary:hover, .filter-btn.active:hover, .project-link.demo:hover, .learning-tag:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:hover, .filter-btn:hover, .project-link.github:hover {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* ===== 統一卡片樣式 ===== */
+.project-item, .project-card, .tool-card, .tip-card, .interest-card, .value-item, .stat-card {
+    background: var(--bg-card);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px var(--shadow-light);
+    border: 2px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+}
+.project-item:hover, .project-card:hover, .tool-card:hover, .tip-card:hover, .interest-card:hover, .value-item:hover, .stat-card:hover {
+    box-shadow: 0 12px 32px var(--shadow-medium);
+    border-color: var(--accent-color);
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* ===== 統一 feature tag、分類標籤、日期樣式 ===== */
+.feature-tag, .skill-tag, .learning-tag {
+    display: inline-block;
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+    border: 1.5px solid var(--accent-color);
+    margin: 0 0.3rem 0.5rem 0;
+    padding: 0.3rem 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+.feature-tag:hover, .skill-tag:hover, .learning-tag:hover {
+    background: var(--accent-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.project-date, .stat-label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-left: 0.5rem;
+}
+
+/* ===== 卡片內部結構統一 ===== */
+.project-header, .tool-card, .tip-card, .interest-card, .value-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+}
+.project-header .project-icon, .tool-card i, .tip-card i, .interest-card i, .value-item i {
+    font-size: 2.2rem;
+    border-radius: 12px;
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+    padding: 0.7rem;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+.project-meta h4, .tool-card h4, .tip-card h4, .interest-card h4, .value-item h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+.project-description, .tool-card p, .tip-card p, .interest-card p, .value-item p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.7rem;
+}
+
+/* ===== 下拉選單統一 ===== */
+.sort-select {
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
+    background: var(--bg-secondary);
+    color: var(--accent-color);
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+    box-shadow: 0 1px 4px var(--shadow-light);
     transition: border 0.2s;
 }
 .sort-select:focus {
-    border-color: var(--accent-color);
+    outline: none;
+    border-color: var(--primary-color);
 }
 
-/* --- DIY/專案主題色區分 --- */
-#diy-hero {
-    background: linear-gradient(135deg, #4ECDC4 0%, #A8B5A0 100%); /* 綠色系 */
-    color: #fff;
-    padding: 80px 40px;
-    text-align: center;
-}
-#diy-hero h2 {
-    color: #2d6a5e;
-}
-#diy-hero .hero-description {
-    color: #eafff7;
-}
-
-#project-hero {
-    background: linear-gradient(135deg, #667eea 0%, #8b9dc3 100%); /* 藍色系 */
-    color: #fff;
-    padding: 80px 40px;
-    text-align: center;
-}
-#project-hero h2 {
-    color: #2d3a6a;
-}
-#project-hero .hero-description {
-    color: #eaf0ff;
-}
-
-/* --- DIY專案卡片細節色彩 --- */
-.project-list .project-item {
-    border-left: 6px solid #4ECDC4;
-    box-shadow: 0 2px 12px rgba(78,205,196,0.08);
-}
-.project-list .project-item .project-icon {
-    background: #4ECDC4;
-    color: #fff;
-}
-.project-list .project-item .feature-tag {
-    background: #eafff7;
-    color: #2d6a5e;
-    border: 1px solid #4ECDC4;
-}
-
-/* --- 專案作品卡片細節色彩 --- */
-#all-projects .project-card, #featured-projects .project-card {
-    border-left: 6px solid #667eea;
-    box-shadow: 0 2px 12px rgba(102,126,234,0.08);
-}
-#all-projects .project-card .project-icon, #featured-projects .project-card .project-icon {
-    background: #667eea;
-    color: #fff;
-}
-#all-projects .project-card .feature-tag, #featured-projects .project-card .feature-tag {
-    background: #eaf0ff;
-    color: #2d3a6a;
-    border: 1px solid #667eea;
+/* ===== 響應式細節優化 ===== */
+@media (max-width: 600px) {
+    .project-item, .project-card, .tool-card, .tip-card, .interest-card, .value-item, .stat-card {
+        padding: 1.2rem 0.7rem;
+    }
+    .btn, .filter-btn, .project-link, .sort-select {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .feature-tag, .skill-tag, .learning-tag {
+        font-size: 0.9rem;
+        padding: 0.2rem 0.7rem;
+    }
 }
