@@ -940,6 +940,121 @@ footer .container {
     background: linear-gradient(135deg, #764ba2, var(--accent-color));
 }
 
+/* Boxed section for Interests and Philosophy */
+.boxed-section {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    margin-top: 2rem; /* Add some space below the section title */
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    /* margin-top: 0; Remove margin-top as .boxed-section provides spacing */
+}
+
+.interest-card {
+    background: var(--bg-primary); /* Slightly different background for cards inside the box */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+.interest-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.interest-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.interest-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.philosophy-content {
+    text-align: center; /* Ensure content inside is centered */
+}
+
+.philosophy-content blockquote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--text-primary);
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border-left: 4px solid var(--accent-color);
+    background: var(--bg-primary);
+    border-radius: 0 8px 8px 0;
+    max-width: 700px;
+}
+
+.philosophy-content > p { /* Direct child p of philosophy-content */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    background: var(--bg-primary); /* Slightly different background for cards inside the box */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+.value-item i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.value-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.value-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+
 .loading-container {
     text-align: center;
     padding: 3rem 2rem;
