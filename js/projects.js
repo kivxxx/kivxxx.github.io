@@ -1,5 +1,5 @@
 /**
- * 專案內容管理系統
+ * 專案內容管理系統 (GitHub Pages 優化版)
  * 負責載入、渲染和管理 DIY 及專案作品內容
  */
 class ProjectManager {
@@ -8,6 +8,7 @@ class ProjectManager {
         this.categories = {};
         this.currentFilter = 'all';
         this.currentSort = 'date';
+        this.isGitHubPages = true; // GitHub Pages 標記
     }
 
     /**
@@ -19,7 +20,9 @@ class ProjectManager {
             this.setupEventListeners();
         } catch (error) {
             console.error('專案管理器初始化失敗:', error);
-            this.showError('載入專案資料時發生錯誤，請稍後再試');
+            this.showError('載入專案資料時發生錯誤，正在嘗試備用方案...');
+            // GitHub Pages 備用方案
+            await this.loadProjectsFallback();
         }
     }
 
@@ -28,17 +31,95 @@ class ProjectManager {
      */
     async loadProjects() {
         try {
-            const response = await fetch('data/projects.json');
+            // 使用相對路徑，適合 GitHub Pages
+            const response = await fetch('./data/projects.json', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                cache: 'no-cache' // 確保獲取最新資料
+            });
+            
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+            
             const data = await response.json();
             this.projects = data.projects || [];
             this.categories = data.categories || {};
+            
+            console.log(`✅ 成功載入 ${this.projects.length} 個專案`);
         } catch (error) {
             console.error('載入專案資料失敗:', error);
             throw error;
         }
+    }
+
+    /**
+     * 備用載入方案 (內嵌資料)
+     */
+    async loadProjectsFallback() {
+        console.log('🔄 使用備用資料載入方案...');
+        
+        // 內嵌的備用資料
+        const fallbackData = {
+            "projects": [
+                {
+                    "id": "file-manager-tool",
+                    "type": "project",
+                    "title": "檔案管理自動化工具",
+                    "description": "一個幫助整理桌面文件的 Python 工具，可以根據檔案類型自動分類到不同資料夾，並提供圖形化介面讓使用者自訂規則。",
+                    "techStack": ["Python", "tkinter", "os"],
+                    "features": ["圖形介面", "自動分類", "自訂規則"],
+                    "date": "2025-05-20",
+                    "status": "completed",
+                    "category": "python",
+                    "icon": "fab fa-python",
+                    "image": "",
+                    "links": {
+                        "demo": "",
+                        "github": "https://github.com/kivxx/file-organizer",
+                        "documentation": ""
+                    },
+                    "featured": true
+                },
+                {
+                    "id": "diy-temp-monitor",
+                    "type": "diy",
+                    "title": "智慧家庭溫濕度監測器",
+                    "description": "結合 Arduino 和 ESP32 的 IoT 專案，可以即時監測室內溫濕度並透過網頁顯示歷史數據。",
+                    "techStack": ["Arduino", "ESP32", "DHT22", "WiFi"],
+                    "features": ["即時監測", "網頁介面", "資料記錄"],
+                    "date": "2025-06-10",
+                    "status": "completed",
+                    "category": "electronics",
+                    "icon": "fas fa-microchip",
+                    "image": "",
+                    "links": {
+                        "demo": "",
+                        "github": "",
+                        "documentation": ""
+                    },
+                    "featured": false
+                }
+            ],
+            "categories": {
+                "diy": {
+                    "electronics": { "name": "電子製作", "icon": "fas fa-microchip", "color": "#FF6B6B" },
+                    "woodwork": { "name": "木工製作", "icon": "fas fa-hammer", "color": "#4ECDC4" },
+                    "3dprinting": { "name": "3D列印", "icon": "fas fa-cube", "color": "#45B7D1" }
+                },
+                "project": {
+                    "python": { "name": "Python", "icon": "fab fa-python", "color": "#3776AB" },
+                    "web": { "name": "網頁開發", "icon": "fas fa-globe", "color": "#61DAFB" },
+                    "tool": { "name": "實用工具", "icon": "fas fa-tools", "color": "#6C5CE7" }
+                }
+            }
+        };
+        
+        this.projects = fallbackData.projects;
+        this.categories = fallbackData.categories;
+        console.log(`✅ 備用方案載入 ${this.projects.length} 個專案`);
     }
 
     /**
@@ -361,13 +442,16 @@ class ProjectManager {
         if (container) {
             container.appendChild(errorDiv);
         }
-    }
-
-    /**
-     * 新增專案 (管理功能)
+    }    /**
+     * 新增專案 (GitHub Pages 模擬功能)
      */
     addProject(projectData) {
-        // 生成新的 ID
+        if (this.isGitHubPages) {
+            alert('⚠️ GitHub Pages 不支援新增功能\n\n請直接編輯 data/projects.json 檔案，然後提交到 GitHub 儲存庫。');
+            return;
+        }
+        
+        // 原本的新增邏輯
         const newId = this.generateProjectId(projectData.title);
         const newProject = {
             id: newId,
@@ -376,31 +460,38 @@ class ProjectManager {
         };
         
         this.projects.push(newProject);
-        this.saveProjects();
         this.renderProjects(projectData.type);
     }
 
     /**
-     * 編輯專案 (管理功能)
+     * 編輯專案 (GitHub Pages 模擬功能)
      */
     editProject(projectId, updatedData) {
+        if (this.isGitHubPages) {
+            alert('⚠️ GitHub Pages 不支援編輯功能\n\n請直接編輯 data/projects.json 檔案，然後提交到 GitHub 儲存庫。');
+            return;
+        }
+        
         const index = this.projects.findIndex(p => p.id === projectId);
         if (index !== -1) {
             this.projects[index] = { ...this.projects[index], ...updatedData };
-            this.saveProjects();
             this.renderProjects(this.projects[index].type);
         }
     }
 
     /**
-     * 刪除專案 (管理功能)
+     * 刪除專案 (GitHub Pages 模擬功能)
      */
     deleteProject(projectId) {
+        if (this.isGitHubPages) {
+            alert('⚠️ GitHub Pages 不支援刪除功能\n\n請直接編輯 data/projects.json 檔案，然後提交到 GitHub 儲存庫。');
+            return;
+        }
+        
         const index = this.projects.findIndex(p => p.id === projectId);
         if (index !== -1) {
             const projectType = this.projects[index].type;
             this.projects.splice(index, 1);
-            this.saveProjects();
             this.renderProjects(projectType);
         }
     }
@@ -413,15 +504,18 @@ class ProjectManager {
             .replace(/[^\w\s-]/g, '')
             .replace(/\s+/g, '-')
             + '-' + Date.now();
-    }
-
-    /**
-     * 儲存專案資料 (實際專案中需要後端支援)
+    }    /**
+     * 儲存專案資料 (GitHub Pages 說明)
      */
     saveProjects() {
-        // 這裡只是模擬，實際需要呼叫 API 儲存到伺服器
+        if (this.isGitHubPages) {
+            console.log('ℹ️ GitHub Pages 環境 - 無法直接儲存資料');
+            console.log('請編輯 data/projects.json 檔案並提交到 GitHub');
+            return;
+        }
+        
+        // 原本只是模擬儲存
         console.log('專案資料已更新:', this.projects);
-        // localStorage.setItem('projects', JSON.stringify(this.projects));
     }
 }
 

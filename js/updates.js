@@ -2,22 +2,56 @@
 class UpdatesManager {
     constructor() {
         this.updates = [];
-    }
-
-    // 获取更新数据
+    }    // 获取更新数据 (GitHub Pages 優化版)
     async fetchUpdates() {
         try {
-            const response = await fetch('./data/updates.json');
+            // 使用相對路徑
+            const response = await fetch('./data/updates.json', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                cache: 'no-cache'
+            });
+            
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+            
             const data = await response.json();
-            this.updates = data.updates;
+            this.updates = data.updates || [];
             return this.updates;
         } catch (error) {
             console.error('Error fetching updates:', error);
-            throw error;
+            // GitHub Pages 備用方案
+            return this.getFallbackUpdates();
         }
+    }
+
+    // 備用更新資料
+    getFallbackUpdates() {
+        console.log('🔄 使用備用更新資料...');
+        this.updates = [
+            {
+                "id": "update-1",
+                "title": "專案管理系統上線",
+                "description": "新增了動態專案管理功能，支援 DIY 和程式專案的分類展示。",
+                "date": "2025-06-13",
+                "type": "code",
+                "link": "project.html",
+                "tags": ["網站更新", "功能"]
+            },
+            {
+                "id": "update-2", 
+                "title": "個人照片整合完成",
+                "description": "首頁現在顯示個人照片，提升了網站的個人化程度。",
+                "date": "2025-06-12",
+                "type": "design",
+                "link": "index.html",
+                "tags": ["設計", "個人化"]
+            }
+        ];
+        return this.updates;
     }
 
     // 显示更新内容

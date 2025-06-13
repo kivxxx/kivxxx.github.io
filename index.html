@@ -3,15 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kivxx - 我的個人網站</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Kivxx - 我的個人網站 | DIY 專案與程式作品分享</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="歡迎來到 Kiv 的個人網站！這裡分享我的 DIY 專案、程式作品和技術心得。包含 Arduino、Python、網頁開發等多元創作內容。">
+    <meta name="keywords" content="DIY,Arduino,Python,網頁開發,個人網站,程式設計,創客,技術分享">
+    <meta name="author" content="Kiv">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kivxx - 我的個人網站">
+    <meta property="og:description" content="分享 DIY 專案、程式作品和技術心得的個人網站">
+    <meta property="og:image" content="./photo.png">
+    <meta property="og:url" content="https://kivxx.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="zh_TW">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kivxx - 我的個人網站">
+    <meta name="twitter:description" content="分享 DIY 專案、程式作品和技術心得">
+    <meta name="twitter:image" content="./photo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://kivxx.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./photo.png">
+    <link rel="apple-touch-icon" href="./photo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kiv",
+        "url": "https://kivxx.github.io",
+        "image": "https://kivxx.github.io/photo.png",
+        "description": "DIY 愛好者與程式開發者，專注於創客專案和網頁開發",
+        "knowsAbout": ["Arduino", "Python", "JavaScript", "DIY", "3D列印", "網頁開發"]
+    }
+    </script>
+    
     <!-- Core JavaScript Files -->
-    <script src="js/config.js"></script>
-    <script src="js/components.js"></script>
-    <script src="js/updates.js"></script>
-    <script src="js/app.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/components.js"></script>
+    <script src="./js/updates.js"></script>
+    <script src="./js/app.js"></script>
 </head>
 <body>
     <!-- Navigation will be dynamically inserted -->

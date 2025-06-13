@@ -1,0 +1,43 @@
+# GitHub Pages 網站配置
+
+# 主要設定
+title: "Kivxx - 個人網站"
+description: "分享 DIY 專案和程式作品的個人網站"
+author: "Kiv"
+url: "https://kivxx.github.io"
+baseurl: ""
+
+# GitHub Pages 設定
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 排除檔案
+exclude:
+  - README.md
+  - admin.html
+  - test.html
+  - .gitignore
+
+# 包含檔案
+include:
+  - _headers
+  - _redirects
+
+# 預設值
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      
+# SEO 設定
+lang: zh-TW
+logo: photo.png
+
+# 社群媒體
+social:
+  name: Kiv
+  links:
+    - https://github.com/kivxx

@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# 不允許索引管理頁面
+Disallow: /admin.html
+Disallow: /test.html
+
+# 允許索引主要內容
+Allow: /index.html
+Allow: /about.html
+Allow: /project.html
+Allow: /diy.html
+Allow: /data/
+Allow: /js/
+Allow: /style.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+
+# Sitemap 位置
+Sitemap: https://kivxx.github.io/sitemap.xml
