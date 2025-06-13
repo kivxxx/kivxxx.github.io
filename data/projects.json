@@ -1,205 +1,53 @@
 {
   "projects": [
     {
-      "id": "diy-temp-monitor",
-      "type": "diy",
-      "title": "智慧家庭溫濕度監測器",
-      "description": "這是我第一個嘗試結合 Arduino 和 ESP32 的 IoT 專案。學習了感測器讀取、WiFi 連線和網頁介面開發。系統可以即時監測室內溫濕度，並透過網頁顯示歷史數據圖表。",
-      "techStack": ["Arduino", "ESP32", "DHT22", "WiFi"],
-      "features": ["即時監測", "網頁介面", "資料記錄", "警報提醒"],
-      "date": "2025-06-10",
-      "status": "completed",
-      "category": "electronics",
-      "icon": "fas fa-microchip",
-      "image": "",
-      "links": {
-        "demo": "",
-        "github": "https://github.com/kivxxx/temp-monitor",
-        "documentation": ""
-      },
-      "featured": false
-    },
-    {
-      "id": "diy-wooden-bookshelf",
-      "type": "diy",
-      "title": "舊木板改造：極簡風書架",
-      "description": "利用廢棄的木板，重新設計並製作了一個簡約風格的書架。這個專案讓我學到了木工的基本技巧，包括測量、切割、打磨和組裝。最終成品不僅實用，也為房間增添了溫暖的質感。",
-      "techStack": ["木工", "設計", "環保再利用"],
-      "features": ["環保再利用", "極簡設計", "手工製作", "實用美觀"],
-      "date": "2025-06-05",
-      "status": "completed",
-      "category": "woodwork",
-      "icon": "fas fa-hammer",
-      "image": "",
-      "links": {
-        "demo": "",
-        "github": "",
-        "documentation": ""
-      },
-      "featured": true
-    },
-    {
-      "id": "diy-led-lighting",
-      "type": "diy",
-      "title": "LED 智慧照明系統",
-      "description": "製作一個可以透過手機控制的 LED 燈條系統，支援顏色調整、亮度控制和情境模式。這個專案結合了硬體控制和軟體開發，讓我對 IoT 系統有了更深入的理解。",
-      "techStack": ["Arduino", "LED Strip", "手機APP", "藍牙"],
-      "features": ["手機控制", "多種模式", "調色調亮", "定時功能"],
-      "date": "2025-05-28",
-      "status": "completed",
-      "category": "electronics",
-      "icon": "fas fa-lightbulb",
-      "image": "",
-      "links": {
-        "demo": "",
-        "github": "https://github.com/kivxxx/led-controller",
-        "documentation": ""
-      },
-      "featured": false
-    },
-    {
-      "id": "diy-3d-phone-stand",
-      "type": "diy",
-      "title": "3D列印手機支架",
-      "description": "設計並3D列印一個可調角度的手機支架。從概念設計到3D建模，再到列印和後處理，完整體驗了數位製造的流程。支架具有穩固的結構和優雅的外觀。",
-      "techStack": ["3D列印", "Fusion 360", "PLA材料"],
-      "features": ["可調角度", "穩固結構", "美觀設計", "環保材料"],
-      "date": "2025-05-15",
-      "status": "completed",
-      "category": "3dprinting",
-      "icon": "fas fa-cube",
-      "image": "",
-      "links": {
-        "demo": "",
-        "github": "",
-        "documentation": ""
-      },
-      "featured": false
-    },
-    {
-      "id": "file-manager-tool",
+      "id": "p1749820079167",
       "type": "project",
-      "title": "檔案管理自動化工具",
-      "description": "一個幫助整理桌面文件的 Python 工具，可以根據檔案類型自動分類到不同資料夾，並提供圖形化介面讓使用者自訂規則。支援批次處理和定時自動整理功能。",
-      "techStack": ["Python", "tkinter", "os", "watchdog"],
-      "features": ["圖形介面", "自動分類", "自訂規則", "定時整理"],
-      "date": "2025-05-20",
-      "status": "completed",
-      "category": "python",
-      "icon": "fab fa-python",
-      "image": "",
-      "links": {
-        "demo": "",
-        "github": "https://github.com/kivxxx/file-organizer",
-        "documentation": ""
-      },
-      "featured": true
-    },
-    {
-      "id": "task-manager-web",
-      "type": "project",
-      "title": "個人任務管理系統",
-      "description": "一個簡潔的網頁版任務管理工具，支援任務分類、優先級設定和進度追蹤。使用本地儲存，無需註冊即可使用。具有響應式設計，支援拖拽排序功能。",
-      "techStack": ["JavaScript", "LocalStorage", "CSS", "HTML5"],
-      "features": ["響應式設計", "本地儲存", "拖拽排序", "優先級管理"],
-      "date": "2025-04-25",
-      "status": "completed",
-      "category": "web",
-      "icon": "fas fa-tasks",
-      "image": "",
-      "links": {        "demo": "https://kivxxx.github.io/task-manager",
-        "github": "https://github.com/kivxxx/task-manager",
-        "documentation": ""
-      },
-      "featured": true
-    },
-    {
-      "id": "price-tracker",
-      "type": "project",
-      "title": "網頁爬蟲價格追蹤器",
-      "description": "自動追蹤電商網站商品價格變化，並在價格下降時發送通知。支援多個購物網站和自訂監控間隔。使用了反反爬蟲技術，確保穩定運行。",
-      "techStack": ["Python", "BeautifulSoup", "Selenium", "SQLite"],
-      "features": ["多網站支援", "價格警報", "歷史追蹤", "自動通知"],
-      "date": "2025-04-10",
-      "status": "completed",
-      "category": "python",
-      "icon": "fas fa-chart-line",
-      "image": "",
-      "links": {
-        "demo": "",
-        "github": "https://github.com/kivxxx/price-tracker",
-        "documentation": ""
-      },
-      "featured": false
-    },
-    {
-      "id": "expense-tracker-pwa",
-      "type": "project",
-      "title": "記帳 PWA 應用",
-      "description": "一個簡潔的記帳網頁應用，支援分類記錄、圖表分析和預算設定。使用 PWA 技術，可像 APP 一樣安裝使用。具有離線功能和資料同步能力。",
-      "techStack": ["React", "Chart.js", "PWA", "IndexedDB"],
-      "features": ["離線使用", "圖表分析", "預算追蹤", "分類管理"],
-      "date": "2025-03-30",
-      "status": "completed",
-      "category": "web",
-      "icon": "fas fa-wallet",
-      "image": "",
-      "links": {        "demo": "https://kivxxx.github.io/expense-tracker",
-        "github": "https://github.com/kivxxx/expense-tracker",
-        "documentation": ""
-      },
-      "featured": true
-    },
-    {
-      "id": "image-batch-processor",
-      "type": "project",
-      "title": "圖片批次處理工具",
-      "description": "批次處理大量圖片的工具，支援尺寸調整、格式轉換、浮水印添加等功能。提供直觀的圖形介面操作，支援拖拽上傳和預覽功能。",
-      "techStack": ["Python", "Pillow", "tkinter", "threading"],
-      "features": ["批次處理", "格式轉換", "浮水印", "預覽功能"],
-      "date": "2025-03-15",
-      "status": "completed",
+      "title": "台科通",
+      "description": "台科大校務系統",
+      "techStack": [],
+      "features": [],
+      "date": "2025-06-13",
+      "status": "in-progress",
       "category": "tool",
-      "icon": "fas fa-image",
-      "image": "",
+      "icon": "",
       "links": {
+        "github": "https://github.com/kivxxx/tkt",
         "demo": "",
-        "github": "https://github.com/kivxxx/image-processor",
         "documentation": ""
       },
-      "featured": false
-    },
-    {
-      "id": "blog-system",
-      "type": "project",
-      "title": "簡易部落格系統",
-      "description": "使用 Node.js 開發的輕量級部落格系統，支援文章發布、留言互動和標籤分類。採用響應式設計，適合各種裝置。具有 SEO 優化和快速載入特性。",
-      "techStack": ["Node.js", "Express", "MongoDB", "EJS"],
-      "features": ["響應式設計", "SEO優化", "留言系統", "標籤分類"],
-      "date": "2025-02-20",
-      "status": "completed",
-      "category": "web",
-      "icon": "fab fa-node-js",
-      "image": "",
-      "links": {        "demo": "https://kivxxx-blog.herokuapp.com",
-        "github": "https://github.com/kivxxx/blog-system",
-        "documentation": ""
-      },
-      "featured": false
+      "featured": true
     }
   ],
   "categories": {
     "diy": {
-      "electronics": { "name": "電子製作", "icon": "fas fa-microchip", "color": "#FF6B6B" },
-      "woodwork": { "name": "木工製作", "icon": "fas fa-hammer", "color": "#4ECDC4" },
-      "3dprinting": { "name": "3D列印", "icon": "fas fa-cube", "color": "#45B7D1" },
-      "mechanical": { "name": "機械製作", "icon": "fas fa-cogs", "color": "#FFA07A" }
+      "electronics": {
+        "name": "電子製作",
+        "icon": "fas fa-microchip",
+        "color": "#FF6B6B"
+      },
+      "3dprinting": {
+        "name": "3D列印",
+        "icon": "fas fa-cube",
+        "color": "#45B7D1"
+      },
+      "mechanical": {
+        "name": "機械製作",
+        "icon": "fas fa-cogs",
+        "color": "#FFA07A"
+      }
     },
     "project": {
-      "python": { "name": "Python", "icon": "fab fa-python", "color": "#3776AB" },
-      "javascript": { "name": "JavaScript", "icon": "fab fa-js-square", "color": "#F7DF1E" },
-      "web": { "name": "網頁開發", "icon": "fas fa-globe", "color": "#61DAFB" },
-      "tool": { "name": "實用工具", "icon": "fas fa-tools", "color": "#6C5CE7" }
+      "web": {
+        "name": "網頁開發",
+        "icon": "fas fa-globe",
+        "color": "#61DAFB"
+      },
+      "tool": {
+        "name": "實用工具",
+        "icon": "fas fa-tools",
+        "color": "#6C5CE7"
+      }
     }
   }
 }
