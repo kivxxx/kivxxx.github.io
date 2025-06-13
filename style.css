@@ -427,62 +427,89 @@ footer .container {
     font-weight: 700;
 }
 
-/* DIY页面样式 */
-#diy-hero {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--soft-green) 100%);
-    color: white;
-    padding: 80px 40px;
+/* About頁面特定樣式 */
+#about-hero .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about-hero .profile-container {
+    margin-bottom: 2rem;
     text-align: center;
 }
 
-#diy-hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+#about-hero .profile-photo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#diy-hero .hero-description {
+#about-hero .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#about-hero .profile-photo:hover img {
+    transform: scale(1.1);
+}
+
+.about-intro {
     font-size: 1.2rem;
-    margin-bottom: 40px;
+    margin-bottom: 0;
     opacity: 0.95;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* 故事內容樣式 */
 .story-content {
     max-width: 800px;
     margin: 0 auto;
-    line-height: 1.8;
+    text-align: center;
 }
 
 .story-content p {
-    margin-bottom: 25px;
     font-size: 1.1rem;
-    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
 }
 
+/* 技能分類樣式 */
 .skills-category {
-    display: grid;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .skill-category {
     background: var(--bg-card);
-    padding: 30px;
+    padding: 2rem;
     border-radius: 15px;
     border: 2px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    border-color: var(--accent-color);
 }
 
 .skill-category h4 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
     color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5rem;
 }
 
 .skill-category h4 i {
@@ -492,98 +519,28 @@ footer .container {
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.8rem;
 }
 
 .skill-tag {
-    background: var(--accent-color);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
+    background: var(--bg-primary);
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.interests-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.skill-tag:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--shadow-light);
 }
 
-.interest-card {
-    background: var(--bg-card);
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-    border: 2px solid var(--border-color);
-    transition: transform 0.3s ease;
-}
-
-.interest-card:hover {
-    transform: translateY(-5px);
-}
-
-.interest-card i {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-}
-
-.interest-card h4 {
-    margin-bottom: 15px;
-    color: var(--text-primary);
-}
-
-.interest-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.philosophy-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.philosophy-content blockquote {
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--accent-color);
-    margin: 40px 0;
-    padding: 30px;
-    background: var(--bg-card);
-    border-radius: 15px;
-    border-left: 5px solid var(--accent-color);
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.value-item {
-    text-align: center;
-    padding: 20px;
-}
-
-.value-item i {
-    font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-.value-item h4 {
-    margin-bottom: 10px;
-    color: var(--text-primary);
-}
-
-.value-item p {
-    color: var(--text-secondary);
-    line-height: 1.5;
-}
-
+/* 聯絡資訊樣式 */
 .contact-info {
     text-align: center;
     max-width: 600px;
@@ -592,13 +549,14 @@ footer .container {
 
 .contact-info p {
     margin-bottom: 30px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.6;
+    font-size: 1.1rem;
 }
 
-/* Code页面?��? */
+/* Code页面样式 */
 #project-hero {
-    background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
     color: white;
     padding: 80px 40px;
     text-align: center;
@@ -608,6 +566,17 @@ footer .container {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#project-hero .hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .projects-grid {
@@ -919,20 +888,33 @@ footer .container {
     color: var(--text-secondary);
 }
 
-/* 学�??�签?��? */
+/* 学习标签样式 */
 .learning-content {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
     padding: 2rem;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid var(--border-color);
     margin-top: 2rem;
-    color: white;
+    color: var(--text-primary);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .learning-content p {
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.learning-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.learning-content a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 .learning-tags {
@@ -961,12 +943,13 @@ footer .container {
 .loading-container {
     text-align: center;
     padding: 3rem 2rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-secondary);
 }
 
 .loading-container p {
     margin-top: 1rem;
     font-size: 1.1rem;
+    color: var(--text-secondary);
 }
 
 /* 页面?�载?�样�?*/
@@ -1396,7 +1379,9 @@ nav a.active {
     }
     
     .hero-description,
-    #diy-hero .hero-description {
+    #diy-hero .hero-description,
+    #project-hero .hero-description,
+    .about-intro {
         font-size: 1rem;
         margin-bottom: 30px;
     }
@@ -1413,17 +1398,17 @@ nav a.active {
     }
     
     /* 專案列表響應式 */
-    .project-list {
+    .project-list, #featured-projects, #all-projects, #tech-stats, #learning {
         padding: 40px 20px;
     }
     
-    .diy-projects {
+    .diy-projects, .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
     /* 技能卡片響應式 */
-    .skills-grid {
+    .skills-grid, .skills-category {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -1434,9 +1419,16 @@ nav a.active {
         gap: 20px;
     }
     
+    /* 統計卡片響應式 */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
     /* 工具卡片和提示卡片小屏幕優化 */
     .tool-card,
-    .tip-card {
+    .tip-card,
+    .skill-category {
         padding: 1rem;
     }
     
@@ -1456,4 +1448,132 @@ nav a.active {
         min-width: 200px;
         text-align: center;
     }
+    
+    /* About頁面響應式 */
+    #about-hero .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* 專案頁面響應式 */
+    .learning-tags {
+        justify-content: center;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* 專案頁面特定樣式 */
+#featured-projects, #all-projects {
+    padding: 60px 40px;
+}
+
+#featured-projects h3, #all-projects h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#featured-projects h3 i, #all-projects h3 i {
+    color: var(--accent-color);
+}
+
+/* 技術統計樣式 */
+#tech-stats {
+    background: var(--bg-primary);
+    padding: 60px 40px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#tech-stats h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#tech-stats h3 i {
+    color: var(--accent-color);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: var(--bg-secondary);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* 持續學習區塊樣式 */
+#learning {
+    padding: 60px 40px;
+}
+
+#learning h3 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#learning h3 i {
+    color: var(--accent-color);
 }
