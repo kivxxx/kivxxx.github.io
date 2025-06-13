@@ -1131,6 +1131,28 @@ nav a.active {
         width: 45px;
         height: 45px;
     }
+
+    /* 技能卡片響應式 */
+    .skills-grid { /* Styles for .skills-grid (e.g., on index page) */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skills-category { /* Styles for .skills-category (on about.html) */
+        /* This was previously combined with .skills-grid and had grid-template-columns */
+        /* It's a flex container (flex-direction: column), so we just adjust the gap */
+        gap: 20px;
+    }
+    
+    /* Ensure the original combined rule is removed or commented out if it was separate */
+    /* The original rule was:
+    .skills-grid, .skills-category {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    */
+
+
 }
 
 /* 项目筛选器 */
@@ -1408,11 +1430,25 @@ nav a.active {
     }
     
     /* 技能卡片響應式 */
+    .skills-grid { /* Styles for .skills-grid (e.g., on index page) */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .skills-category { /* Styles for .skills-category (on about.html) */
+        /* This was previously combined with .skills-grid and had grid-template-columns */
+        /* It's a flex container (flex-direction: column), so we just adjust the gap */
+        gap: 20px;
+    }
+    
+    /* Ensure the original combined rule is removed or commented out if it was separate */
+    /* The original rule was:
     .skills-grid, .skills-category {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+    */
+
     /* 更新卡片響應式 */
     .updates-grid {
         grid-template-columns: 1fr;
