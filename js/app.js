@@ -274,7 +274,34 @@ class App {
     }
 
     // 项目统计动画
-    initProjectStats() {
+    async initProjectStats() {
+        // 取得專案資料
+        if (typeof projectManager !== 'undefined' && projectManager.projects.length > 0) {
+            const projects = projectManager.projects;
+            // 完成專案數
+            const projectCount = projects.length;
+            // 所有 techStack 去重
+            const allTech = new Set();
+            projects.forEach(p => (p.techStack||[]).forEach(t => allTech.add(t)));
+            const techCount = allTech.size;
+            // 程式碼行數（假設每專案 200 行）
+            const codeLines = projectCount * 200;
+            // 年開發經驗（以最早專案年份到現在）
+            const years = (() => {
+                const yearsArr = projects.map(p => parseInt((p.date||'').slice(0,4))).filter(Boolean);
+                if (yearsArr.length === 0) return 1;
+                const minYear = Math.min(...yearsArr);
+                const nowYear = new Date().getFullYear();
+                return Math.max(1, nowYear - minYear + 1);
+            })();
+            // 填入數字
+            const statNumbers = document.querySelectorAll('#tech-stats .stat-number');
+            if (statNumbers[0]) statNumbers[0].textContent = projectCount;
+            if (statNumbers[1]) statNumbers[1].textContent = techCount;
+            if (statNumbers[2]) statNumbers[2].textContent = codeLines + '+';
+            if (statNumbers[3]) statNumbers[3].textContent = years + '+';
+        }
+        // 動畫
         const statNumbers = document.querySelectorAll('.stat-number');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -286,7 +313,6 @@ class App {
                 }
             });
         });
-
         statNumbers.forEach(stat => observer.observe(stat));
     }
 

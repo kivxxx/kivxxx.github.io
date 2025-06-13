@@ -83,13 +83,17 @@ componentManager.register('footer', () => {
 // 联系方式组件
 componentManager.register('contactLinks', () => {
     return `
-        <div class="contact-links">
-            <a href="mailto:${SITE_CONFIG.email}" class="contact-link">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-            <a href="${SITE_CONFIG.github}" class="contact-link" target="_blank">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+        <div class="contact-links contact-links-decorated">
+            <div class="contact-link-card">
+                <i class="fas fa-envelope"></i>
+                <span>Email：</span>
+                <span class="contact-value">tung.charon@email.com</span>
+            </div>
+            <div class="contact-link-card">
+                <i class="fab fa-github"></i>
+                <span>GitHub：</span>
+                <span class="contact-value">kivxxx</span>
+            </div>
         </div>
     `;
 });
