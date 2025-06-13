@@ -1,15 +1,34 @@
-/* 基础样式 */
+/* ?��??��? - ?�蘭迪色�?*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ?�蘭迪色彩�???*/
+:root {
+    --primary-color: #9b9b9b;          /* 主�??�色 */
+    --secondary-color: #b8a58a;        /* ?��???*/
+    --accent-color: #8b9dc3;           /* ?��??�色 */
+    --soft-green: #a8b5a0;             /* ?��?綠色 */
+    --soft-pink: #c8a2a2;              /* ?��?粉色 */
+    --soft-yellow: #d4c4a0;            /* ?��?黃色 */
+    --text-primary: #4a4a4a;           /* 主�??��? */
+    --text-secondary: #666666;         /* 次�??��? */
+    --text-light: #888888;             /* 淺色?��? */
+    --bg-primary: #f7f6f4;             /* 主�??�景 */
+    --bg-secondary: #ffffff;           /* 次�??�景 */
+    --bg-card: rgba(255, 255, 255, 0.9); /* ?��??�景 */
+    --border-color: #e6e4e0;           /* ?��?顏色 */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* 淺色?�影 */
+    --shadow-medium: rgba(0, 0, 0, 0.12); /* 中�??�影 */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-primary);
+    background: linear-gradient(135deg, #f7f6f4 0%, #e8e6e0 100%);
     min-height: 100vh;
 }
 
@@ -19,14 +38,15 @@ body {
     padding: 0 20px;
 }
 
-/* 导航栏样式 */
+/* 导航?�样�?*/
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-card);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px var(--shadow-light);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid var(--border-color);
 }
 
 header .container {
@@ -37,13 +57,14 @@ header .container {
 }
 
 header h1 {
-    color: #667eea;
+    color: var(--primary-color);
     font-size: 1.8rem;
     font-weight: 700;
 }
 
 header h1 i {
     margin-right: 10px;
+    color: var(--accent-color);
 }
 
 nav ul {
@@ -53,7 +74,7 @@ nav ul {
 }
 
 nav a {
-    color: #333;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -63,22 +84,23 @@ nav a {
 }
 
 nav a:hover {
-    color: #667eea;
+    color: var(--accent-color);
 }
 
-/* 主要内容区域 */
+/* 主�??�容?��? */
 main {
-    background: white;
+    background: var(--bg-secondary);
     margin: 20px auto;
     max-width: 1200px;
     border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 40px var(--shadow-light);
     overflow: hidden;
+    border: 1px solid var(--border-color);
 }
 
-/* Hero 区域 */
+/* Hero ?�??*/
 #hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     padding: 80px 40px;
     text-align: center;
@@ -88,15 +110,17 @@ main {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
     font-size: 1.2rem;
     margin-bottom: 40px;
-    opacity: 0.9;
+    opacity: 0.95;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .profile-container {
@@ -143,12 +167,14 @@ main {
 
 .btn-primary {
     background: white;
-    color: #667eea;
+    color: var(--accent-color);
+    border: 2px solid white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    background: var(--bg-primary);
 }
 
 .btn-secondary {
@@ -159,13 +185,13 @@ main {
 
 .btn-secondary:hover {
     background: white;
-    color: #667eea;
+    color: var(--accent-color);
 }
 
-/* 区域样式 */
+/* ?�段樣�?*/
 section {
     padding: 60px 40px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 section:last-child {
@@ -174,9 +200,10 @@ section:last-child {
 
 section h3 {
     font-size: 2rem;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     text-align: center;
-    color: #333;
+    color: var(--text-primary);
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,10 +211,10 @@ section h3 {
 }
 
 section h3 i {
-    color: #667eea;
+    color: var(--accent-color);
 }
 
-/* 技能网格 */
+/* ?�?��???*/
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -196,37 +223,40 @@ section h3 i {
 }
 
 .skill-card {
-    background: #f8f9ff;
+    background: var(--bg-card);
     padding: 40px 30px;
     border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e8ecff;
+    transition: all 0.3s ease;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+    border-color: var(--accent-color);
 }
 
 .skill-card i {
     font-size: 3rem;
-    color: #667eea;
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
 .skill-card h4 {
     font-size: 1.3rem;
     margin-bottom: 15px;
-    color: #333;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .skill-card p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
-/* 更新动态网格 */
+/* ?�新?�态�???*/
 .updates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -234,18 +264,20 @@ section h3 i {
 }
 
 .update-card {
-    background: #f8f9ff;
+    background: var(--bg-card);
     border-radius: 15px;
     padding: 30px;
-    border: 1px solid #e8ecff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
     display: flex;
     gap: 20px;
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .update-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.12);
+    box-shadow: 0 12px 25px var(--shadow-medium);
+    border-color: var(--accent-color);
 }
 
 .update-icon {
@@ -261,30 +293,32 @@ section h3 i {
 }
 
 .update-icon.diy {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background: linear-gradient(135deg, var(--soft-pink), var(--secondary-color));
 }
 
 .update-icon.code {
-    background: linear-gradient(135deg, #4834d4, #686de0);
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
 }
 
 .update-content h4 {
     margin-bottom: 10px;
     font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .update-content h4 a {
-    color: #333;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .update-content h4 a:hover {
-    color: #667eea;
+    color: var(--accent-color);
 }
 
 .update-content p {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 10px;
     font-size: 0.9rem;
 }
@@ -295,7 +329,7 @@ section h3 i {
     font-weight: 500;
 }
 
-/* 联系方式 */
+/* ?�系?��? */
 .contact-links {
     display: flex;
     justify-content: center;
@@ -308,23 +342,23 @@ section h3 i {
     align-items: center;
     gap: 10px;
     padding: 15px 25px;
-    background: #f8f9ff;
-    color: #333;
+    background: var(--bg-card);
+    color: var(--text-primary);
     text-decoration: none;
     border-radius: 50px;
     transition: all 0.3s ease;
-    border: 1px solid #e8ecff;
+    border: 2px solid var(--border-color);
 }
 
 .contact-link:hover {
-    background: #667eea;
+    background: var(--accent-color);
     color: white;
     transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background: var(--primary-color);
     color: white;
     text-align: center;
     padding: 30px 0;
@@ -335,10 +369,10 @@ footer .container {
     padding: 0 20px;
 }
 
-/* 项目样式 */
+/* 项目?��? */
 .project-item {
-    background: #f8f9ff;
-    border: 1px solid #e8ecff;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 15px;
@@ -347,22 +381,22 @@ footer .container {
 
 .project-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.12);
+    box-shadow: 0 8px 25px var(--shadow-medium);
 }
 
 .project-item h3 {
     margin-bottom: 15px;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .project-item h3 a {
-    color: #333;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .project-item h3 a:hover {
-    color: #667eea;
+    color: var(--accent-color);
 }
 
 .project-item img {
@@ -379,9 +413,9 @@ footer .container {
     font-weight: 500;
 }
 
-/* About页面样式 */
+/* About页面?��? */
 #about-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--accent-color) 0%, #764ba2 100%);
     color: white;
     padding: 80px 40px;
     text-align: center;
@@ -418,23 +452,23 @@ footer .container {
 }
 
 .skill-category {
-    background: #f8f9ff;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #e8ecff;
+    border: 2px solid var(--border-color);
 }
 
 .skill-category h4 {
     font-size: 1.3rem;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .skill-category h4 i {
-    color: #667eea;
+    color: var(--accent-color);
 }
 
 .skill-tags {
@@ -444,7 +478,7 @@ footer .container {
 }
 
 .skill-tag {
-    background: #667eea;
+    background: var(--accent-color);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -459,11 +493,11 @@ footer .container {
 }
 
 .interest-card {
-    background: #f8f9ff;
+    background: var(--bg-card);
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid #e8ecff;
+    border: 2px solid var(--border-color);
     transition: transform 0.3s ease;
 }
 
@@ -473,17 +507,17 @@ footer .container {
 
 .interest-card i {
     font-size: 2.5rem;
-    color: #667eea;
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
 .interest-card h4 {
     margin-bottom: 15px;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .interest-card p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -496,12 +530,12 @@ footer .container {
 .philosophy-content blockquote {
     font-size: 1.5rem;
     font-style: italic;
-    color: #667eea;
+    color: var(--accent-color);
     margin: 40px 0;
     padding: 30px;
-    background: #f8f9ff;
+    background: var(--bg-card);
     border-radius: 15px;
-    border-left: 5px solid #667eea;
+    border-left: 5px solid var(--accent-color);
 }
 
 .values-grid {
@@ -518,17 +552,17 @@ footer .container {
 
 .value-item i {
     font-size: 2rem;
-    color: #667eea;
+    color: var(--accent-color);
     margin-bottom: 15px;
 }
 
 .value-item h4 {
     margin-bottom: 10px;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .value-item p {
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -544,7 +578,7 @@ footer .container {
     line-height: 1.6;
 }
 
-/* Code页面样式 */
+/* Code页面?��? */
 #project-hero {
     background: linear-gradient(135deg, #4834d4 0%, #686de0 100%);
     color: white;
@@ -566,21 +600,24 @@ footer .container {
 }
 
 .project-card {
-    background: #f8f9ff;
-    border: 1px solid #e8ecff;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
     border-radius: 15px;
     padding: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+    border-color: var(--accent-color);
 }
 
 .project-card.featured {
-    border: 2px solid #667eea;
-    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+    box-shadow: 0 6px 20px var(--shadow-medium);
 }
 
 .project-header {
@@ -603,47 +640,48 @@ footer .container {
 }
 
 .project-icon.python {
-    background: linear-gradient(135deg, #3776ab, #4584b6);
+    background: linear-gradient(135deg, var(--primary-color), var(--text-secondary));
 }
 
 .project-icon.web {
-    background: linear-gradient(135deg, #f7df1e, #ffdc00);
-    color: #333;
+    background: linear-gradient(135deg, var(--soft-yellow), var(--secondary-color));
+    color: var(--text-primary);
 }
 
 .project-icon.arduino {
-    background: linear-gradient(135deg, #00979d, #00878d);
+    background: linear-gradient(135deg, var(--accent-color), var(--soft-green));
 }
 
 .project-icon.diy-electronics {
-    background: linear-gradient(135deg, #4834d4, #686de0);
+    background: linear-gradient(135deg, var(--soft-pink), var(--primary-color));
 }
 
 .project-icon.diy-wood {
-    background: linear-gradient(135deg, #8b4513, #a0522d);
+    background: linear-gradient(135deg, var(--secondary-color), #a0896b);
 }
 
 .project-meta h4 {
     font-size: 1.2rem;
     margin-bottom: 5px;
-    color: #333;
+    color: var(--text-primary);
+    font-weight: 600;
 }
 
 .tech-stack {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
 .project-date {
     font-size: 0.8rem;
-    color: #999;
+    color: var(--text-light);
     display: block;
     margin-top: 5px;
 }
 
 .project-description {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 20px;
 }
@@ -656,8 +694,9 @@ footer .container {
 }
 
 .feature-tag {
-    background: #e8ecff;
-    color: #667eea;
+    background: var(--bg-primary);
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
     padding: 5px 12px;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -683,32 +722,38 @@ footer .container {
 }
 
 .project-link.demo {
-    background: #667eea;
+    background: var(--accent-color);
     color: white;
+    border: 2px solid var(--accent-color);
 }
 
 .project-link.demo:hover {
-    background: #5a67d8;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
 .project-link.github {
-    background: #333;
+    background: var(--text-primary);
     color: white;
+    border: 2px solid var(--text-primary);
 }
 
 .project-link.github:hover {
-    background: #222;
+    background: var(--text-secondary);
+    border-color: var(--text-secondary);
     transform: translateY(-2px);
 }
 
 .project-link:not(.demo):not(.github) {
-    background: #f0f0f0;
-    color: #333;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
 }
 
 .project-link:not(.demo):not(.github):hover {
-    background: #e0e0e0;
+    background: var(--border-color);
+    transform: translateY(-2px);
 }
 
 .projects-list {
@@ -718,8 +763,8 @@ footer .container {
 }
 
 .project-item {
-    background: #f8f9ff;
-    border: 1px solid #e8ecff;
+    background: var(--bg-card);
+    border: 2px solid var(--border-color);
     border-radius: 15px;
     padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -727,7 +772,7 @@ footer .container {
 
 .project-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.12);
+    box-shadow: 0 8px 25px var(--shadow-medium);
 }
 
 .stats-grid {
@@ -766,7 +811,7 @@ footer .container {
     opacity: 0.9;
 }
 
-/* 工具卡片樣式 */
+/* 工具?��?�?? */
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -808,7 +853,7 @@ footer .container {
     line-height: 1.5;
 }
 
-/* 心得分享樣式 */
+/* 心�??�享�?? */
 .tips-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -849,7 +894,7 @@ footer .container {
     opacity: 0.9;
 }
 
-/* 学习标签样式 */
+/* 学�??�签?��? */
 .learning-content {
     background: rgba(255, 255, 255, 0.1);
     padding: 2rem;
@@ -873,7 +918,7 @@ footer .container {
 }
 
 .learning-tag {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--accent-color), #764ba2);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -885,7 +930,7 @@ footer .container {
 .learning-tag:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #764ba2, #667eea);
+    background: linear-gradient(135deg, #764ba2, var(--accent-color));
 }
 
 .loading-container {
@@ -899,7 +944,7 @@ footer .container {
     font-size: 1.1rem;
 }
 
-/* 页面加载器样式 */
+/* 页面?�载?�样�?*/
 .page-loader {
     position: fixed;
     top: 0;
@@ -916,7 +961,7 @@ footer .container {
 
 .loader-content {
     text-align: center;
-    color: #667eea;
+    color: var(--accent-color);
 }
 
 .loader-content i {
@@ -930,7 +975,7 @@ footer .container {
     margin: 0;
 }
 
-/* 应用错误样式 */
+/* 应用?�误?��? */
 .app-error {
     position: fixed;
     top: 0;
@@ -961,13 +1006,13 @@ footer .container {
 
 .error-content p {
     margin: 20px 0;
-    color: #333;
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
-/* 重试按钮样式 */
+/* ?��??�钮?��? */
 .retry-btn {
-    background: #667eea;
+    background: var(--accent-color);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -985,9 +1030,9 @@ footer .container {
     transform: translateY(-2px);
 }
 
-/* 活动导航项样式 */
+/* 活动导航项样�?*/
 nav a.active {
-    color: #667eea;
+    color: var(--accent-color);
     font-weight: 600;
     background: rgba(102, 126, 234, 0.1);
     border-radius: 20px;
@@ -995,14 +1040,14 @@ nav a.active {
     margin: -8px -16px;
 }
 
-/* 返回顶部按钮 */
+/* 返�?顶部?�钮 */
 .back-to-top {
     position: fixed;
     bottom: 30px;
     right: 30px;
     width: 50px;
     height: 50px;
-    background: #667eea;
+    background: var(--accent-color);
     color: white;
     border: none;
     border-radius: 50%;
@@ -1028,13 +1073,13 @@ nav a.active {
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
-/* 响应式导航 */
+/* ?��?式导??*/
 .nav-toggle {
     display: none;
     background: none;
     border: none;
     font-size: 1.5rem;
-    color: #333;
+    color: var(--text-primary);
     cursor: pointer;
     padding: 5px;
 }
@@ -1090,9 +1135,9 @@ nav a.active {
 }
 
 .filter-btn {
-    background: #f8f9ff;
-    color: #667eea;
-    border: 1px solid #e8ecff;
+    background: var(--bg-card);
+    color: var(--accent-color);
+    border: 2px solid var(--border-color);
     padding: 10px 20px;
     border-radius: 25px;
     cursor: pointer;
@@ -1102,12 +1147,12 @@ nav a.active {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #667eea;
+    background: var(--accent-color);
     color: white;
     transform: translateY(-2px);
 }
 
-/* 專案篩選器樣式 */
+/* 專�?篩選?�樣�?*/
 .project-filter {
     margin: 2rem 0;
     padding: 1.5rem;
@@ -1151,7 +1196,7 @@ nav a.active {
 
 .filter-btn.active {
     background: rgba(255, 255, 255, 0.9);
-    color: #333;
+    color: var(--text-primary);
     border-color: white;
 }
 
@@ -1176,7 +1221,7 @@ nav a.active {
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* 空狀态样式 */
+/* 空�??�样�?*/
 .empty-state {
     text-align: center;
     padding: 3rem 2rem;
@@ -1199,7 +1244,7 @@ nav a.active {
     opacity: 0.8;
 }
 
-/* 错误讯息样式 */
+/* ?�误讯息?��? */
 .error-message {
     text-align: center;
     padding: 3rem 2rem;
@@ -1226,7 +1271,7 @@ nav a.active {
     opacity: 0.9;
 }
 
-/* 載入動畫 */
+/* 載入?�畫 */
 .loading-spinner {
     display: inline-block;
     width: 40px;
@@ -1241,7 +1286,7 @@ nav a.active {
     to { transform: rotate(360deg); }
 }
 
-/* 響應式設計 */
+/* ?��?式設�?*/
 @media (max-width: 768px) {
     .filter-controls {
         flex-direction: column;
@@ -1340,4 +1385,78 @@ nav a.active {
     #diy-hero h2 {
         font-size: 2rem;
     }
+}
+
+/* ?�蘭迪色調�??�改?�樣�?*/
+/* 確�??��?對�?度�??��???*/
+.project-grid .project-card,
+.diy-projects .project-card,
+.updates-grid .update-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+.project-grid .project-card:hover,
+.diy-projects .project-card:hover,
+.updates-grid .update-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 30px var(--shadow-medium);
+}
+
+/* 確�??��??�足夠�?比度 */
+.btn, .project-link, .cta-button {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* ?��?強調?�彩 */
+.featured, .highlight {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-primary) 100%);
+    border: 2px solid var(--accent-color);
+}
+
+/* ?��??��??��? */
+::selection {
+    background: var(--accent-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* ?�進表?��?素�?比度 */
+input, textarea, select {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 157, 195, 0.1);
+}
+
+/* ?�進錯誤�?示樣�?*/
+.error-message {
+    background: var(--soft-pink);
+    color: var(--text-primary);
+    border: 2px solid #c8a2a2;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.success-message {
+    background: var(--soft-green);
+    color: var(--text-primary);
+    border: 2px solid #a8b5a0;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
 }

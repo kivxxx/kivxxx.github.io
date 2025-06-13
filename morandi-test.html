@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>莫蘭迪色調測試 - Kivxx</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        .color-sample {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--border-color);
+        }
+        .color-sample.primary { background: var(--primary-color); color: white; }
+        .color-sample.secondary { background: var(--secondary-color); color: white; }
+        .color-sample.accent { background: var(--accent-color); color: white; }
+        .color-sample.soft-green { background: var(--soft-green); color: white; }
+        .color-sample.soft-pink { background: var(--soft-pink); color: white; }
+        .color-sample.soft-yellow { background: var(--soft-yellow); color: var(--text-primary); }
+        .color-sample.bg-primary { background: var(--bg-primary); color: var(--text-primary); }
+        .color-sample.bg-secondary { background: var(--bg-secondary); color: var(--text-primary); }
+        
+        .test-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 15px;
+            border: 2px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-palette"></i>莫蘭迪色調測試</h1>
+            <nav>
+                <ul>
+                    <li><a href="./index.html"><i class="fas fa-home"></i>首頁</a></li>
+                    <li><a href="./diy.html"><i class="fas fa-tools"></i>DIY 筆記</a></li>
+                    <li><a href="./project.html"><i class="fas fa-laptop-code"></i>專案作品</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h2>莫蘭迪色調設計</h2>
+                <p class="hero-description">優雅、柔和、舒適的視覺體驗</p>
+                <div class="hero-buttons">
+                    <a href="#colors" class="btn btn-primary">查看色彩</a>
+                    <a href="#components" class="btn btn-secondary">測試組件</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="colors">
+            <h3><i class="fas fa-palette"></i>色彩配置</h3>
+            <div class="color-palette">
+                <div class="color-sample primary">
+                    <h4>主要灰色</h4>
+                    <p>--primary-color</p>
+                </div>
+                <div class="color-sample secondary">
+                    <h4>暖褐色</h4>
+                    <p>--secondary-color</p>
+                </div>
+                <div class="color-sample accent">
+                    <h4>柔和藍色</h4>
+                    <p>--accent-color</p>
+                </div>
+                <div class="color-sample soft-green">
+                    <h4>柔和綠色</h4>
+                    <p>--soft-green</p>
+                </div>
+                <div class="color-sample soft-pink">
+                    <h4>柔和粉色</h4>
+                    <p>--soft-pink</p>
+                </div>
+                <div class="color-sample soft-yellow">
+                    <h4>柔和黃色</h4>
+                    <p>--soft-yellow</p>
+                </div>
+                <div class="color-sample bg-primary">
+                    <h4>主要背景</h4>
+                    <p>--bg-primary</p>
+                </div>
+                <div class="color-sample bg-secondary">
+                    <h4>次要背景</h4>
+                    <p>--bg-secondary</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="components">
+            <h3><i class="fas fa-cubes"></i>組件測試</h3>
+            
+            <div class="test-section">
+                <h4>專案卡片測試</h4>
+                <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; display: grid;">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon python">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="project-meta">
+                                <h4>Python 專案範例</h4>
+                                <div class="tech-stack">Python, Django, PostgreSQL</div>
+                                <span class="project-date">2024-01-15</span>
+                            </div>
+                        </div>
+                        <p class="project-description">這是一個使用莫蘭迪色調的專案卡片，展示了優雅的配色和良好的對比度。</p>
+                        <div class="project-features">
+                            <span class="feature-tag">Web開發</span>
+                            <span class="feature-tag">資料庫</span>
+                            <span class="feature-tag">API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link demo">
+                                <i class="fas fa-external-link-alt"></i>
+                                Demo
+                            </a>
+                            <a href="#" class="project-link github">
+                                <i class="fab fa-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card featured">
+                        <div class="project-header">
+                            <div class="project-icon arduino">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="project-meta">
+                                <h4>Arduino DIY 專案</h4>
+                                <div class="tech-stack">Arduino, C++, 感測器</div>
+                                <span class="project-date">2024-02-10</span>
+                            </div>
+                        </div>
+                        <p class="project-description">精選專案範例，展示了特殊的邊框強調效果。</p>
+                        <div class="project-features">
+                            <span class="feature-tag">IoT</span>
+                            <span class="feature-tag">硬體</span>
+                            <span class="feature-tag">精選</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link demo">
+                                <i class="fas fa-play"></i>
+                                展示
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h4>按鈕和連結測試</h4>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+                    <a href="#" class="btn btn-primary">主要按鈕</a>
+                    <a href="#" class="btn btn-secondary">次要按鈕</a>
+                    <a href="#" class="project-link demo">Demo 連結</a>
+                    <a href="#" class="project-link github">GitHub 連結</a>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h4>表單元素測試</h4>
+                <div style="display: grid; gap: 15px; max-width: 400px;">
+                    <input type="text" placeholder="輸入文字...">
+                    <textarea placeholder="輸入多行文字..." rows="3"></textarea>
+                    <select>
+                        <option>選擇選項</option>
+                        <option>選項 1</option>
+                        <option>選項 2</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h4>訊息提示測試</h4>
+                <div class="success-message">
+                    <strong>成功！</strong> 這是成功訊息的樣式展示。
+                </div>
+                <div class="error-message">
+                    <strong>錯誤！</strong> 這是錯誤訊息的樣式展示。
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer style="text-align: center; padding: 40px; color: var(--text-secondary); background: var(--bg-primary);">
+        <p>© 2025 Kivxx - 莫蘭迪色調設計測試</p>
+    </footer>
+</body>
+</html>
