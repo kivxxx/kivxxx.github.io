@@ -16,14 +16,13 @@ plugins:
 # 排除檔案
 exclude:
   - README.md
-  - admin.html
-  - test.html
+  - README-GITHUB-PAGES.md
   - .gitignore
+  - .gitattributes
 
 # 包含檔案
 include:
   - _headers
-  - _redirects
 
 # 預設值
 defaults:
@@ -41,3 +40,10 @@ social:
   name: Kiv
   links:
     - https://github.com/kivxxx
+
+# 輸出格式
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
