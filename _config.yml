@@ -5,7 +5,7 @@ title: "Kivxx - 個人網站"
 description: "分享 DIY 專案和程式作品的個人網站"
 author: "Kiv"
 url: "https://kivxx.github.io"
-baseurl: ""
+baseurl: "/kivxx.github.io"
 
 # GitHub Pages 設定
 plugins:
