@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試專案系統 - Kivxx</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="js/config.js"></script>
+    <script src="js/projects.js"></script>
+</head>
+<body>
+    <div style="padding: 2rem; color: white;">
+        <h1>專案系統測試頁面</h1>
+        
+        <div id="test-results" style="margin-top: 2rem;">
+            <h2>載入狀態：</h2>
+            <div id="loading-status">初始化中...</div>
+        </div>
+        
+        <div id="project-display" style="margin-top: 2rem;">
+            <!-- 專案將顯示在這裡 -->
+        </div>
+    </div>
+
+    <script>
+        async function testProjectSystem() {
+            const statusDiv = document.getElementById('loading-status');
+            const displayDiv = document.getElementById('project-display');
+            
+            try {
+                statusDiv.innerHTML = '正在載入專案管理器...';
+                await projectManager.init();
+                
+                statusDiv.innerHTML = `✅ 成功載入 ${projectManager.projects.length} 個專案`;
+                
+                // 顯示專案列表
+                let html = '<h3>所有專案：</h3>';
+                projectManager.projects.forEach(project => {
+                    html += `
+                        <div style="border: 1px solid rgba(255,255,255,0.3); padding: 1rem; margin: 1rem 0; border-radius: 10px;">
+                            <h4>${project.title} (${project.type === 'diy' ? 'DIY' : '程式'})</h4>
+                            <p>${project.description.substring(0, 100)}...</p>
+                            <small>類別: ${project.category} | 日期: ${project.date}</small>
+                        </div>
+                    `;
+                });
+                displayDiv.innerHTML = html;
+                
+            } catch (error) {
+                statusDiv.innerHTML = `❌ 載入失敗: ${error.message}`;
+                console.error('專案系統測試失敗:', error);
+            }
+        }
+
+        // 頁面載入完成後執行測試
+        document.addEventListener('DOMContentLoaded', testProjectSystem);
+    </script>
+</body>
+</html>
