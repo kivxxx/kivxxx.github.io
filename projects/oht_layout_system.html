@@ -7,13 +7,14 @@
 <body>
     <div class="container">
         <h1>OHT Layout Creation System</h1>
-        <p>This project is a system designed to facilitate the creation and visualization of Overhead Hoist Transport (OHT) layouts. It provides a user-friendly interface to design, simulate, and optimize OHT tracks and vehicle routes in a semiconductor fabrication environment.</p>
-        
-        <h2>Key Features:</h2>
-        <pre>
-- Graphical layout editor
-- Pathfinding and collision avoidance simulation
-- Performance analysis and reporting
+                <p>Traditional OHT systems often face efficiency bottlenecks during implementation and maintenance due to rigid path planning. This project aims to revolutionize the underlying pathfinding algorithm, addressing the performance waste and poor scalability caused by pre-calculating all possible path combinations in legacy systems. This allows system integrators to quickly complete and modify production line layouts, thereby accelerating project implementation timelines and reducing long-term maintenance costs.</p><p>This system replaces the traditional linear database with a mesh topology map (in JSON format) and incorporates the A* algorithm to create a dynamic planning engine capable of calculating the optimal path in real-time. This change maximizes the speed of OHT station layout construction and upgrades the system architecture from a "static, fixed path" to a "dynamic, flexible intelligent network," providing a good solution for complex and ever-changing production environments.</p>
+
+                <h2>Key Features:</h2>
+                <pre>
+- Flexible graphical path editor
+- Dynamic A* pathfinding
+- Route weighting configuration
+- Eliminates traditional SQL-based path storage
         </pre>
 
         <img src="../assets/image/oht_layout_system_01.png" alt="OHT Layout System Screenshot" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
