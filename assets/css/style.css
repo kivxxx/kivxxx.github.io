@@ -1,0 +1,120 @@
+body {
+    background-color: #000000;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin: 0;
+    /* padding: 20px; */ /* Removed for unified DOS style */
+}
+
+h1 {
+    border-bottom: 2px solid #00FF00;
+    padding-bottom: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    margin-top: 40px;
+    border-bottom: 2px solid #00FF00; /* Unified line thickness */
+    padding-bottom: 5px;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+a {
+    color: #00FF00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    /* text-align: center; */ /* Remove this, flexbox will handle alignment */
+    padding: 50px 0; /* Removed horizontal padding */
+    background-color: #000000; /* Darker background for the hero section */
+    margin-bottom: 30px;
+    margin-top: 40px; /* Added for consistent spacing */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically align items to the center */
+    justify-content: space-between; /* Distribute space between items */
+    flex-direction: row-reverse; /* Place image on the right */
+    gap: 30px; /* Add some space between the image and text */
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    /* border-radius: 50%; */ /* Makes the image round */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 3px solid #00FF00; /* Green border */
+    /* margin-bottom: 20px; */ /* Remove this, flexbox will handle spacing */
+    flex-shrink: 0; /* Prevent image from shrinking */
+    margin-top: 40px; /* Added to push the image further down */
+}
+
+.hero-text {
+    flex-grow: 1; /* Allow text to take up available space */
+    text-align: left; /* Align text to the left */
+}
+
+.hero h1 {
+    color: #00FF00;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00FF00; /* Re-add border for hero h1 to match Dos style */
+}
+
+.hero p {
+    color: #00FF00; /* Change to green for Dos style */
+    line-height: 1.6;
+    /* max-width: 600px; */ /* Remove this, flex-grow will manage width */
+    /* margin: 0 auto; */ /* Remove this, text-align will manage alignment */
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center text */
+    }
+
+    .hero-text {
+        text-align: center; /* Center text within the text div */
+    }
+
+    .profile-photo {
+        margin-bottom: 20px; /* Add space below image when stacked */
+    }
+}
+
+/* General Section Block Styling for consistency */
+.section-block {
+    padding: 50px 0; /* Consistent with .hero padding */
+    background-color: #000000; /* Consistent with .hero background */
+    margin-bottom: 30px; /* Consistent with .hero margin */
+    margin-top: 40px; /* Consistent with .hero margin */
+}
+
+.section-content {
+    max-width: 800px; /* Consistent with .hero-content max-width */
+    margin: 0 auto; /* Center the content */
+    text-align: left; /* Default text alignment */
+}
+
+/* Adjust h2 within section-content to remove default margin-top if needed */
+.section-content h2 {
+    margin-top: 0; /* Remove default h2 margin-top when inside section-content */
+}

@@ -1,108 +1,39 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiv - 我的個人網站 | DIY 專案與程式作品分享</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="歡迎來到 Kiv 的個人網站！這裡分享我的 DIY 專案、程式作品和技術心得。包含 Arduino、Python、網頁開發等多元創作內容。">    <meta name="keywords" content="DIY,Arduino,Python,網頁開發,個人網站,程式設計,創客,技術分享">
-    <meta name="author" content="Kiv">
-    <meta name="robots" content="index, follow">
-      <!-- Open Graph Meta Tags -->    <meta property="og:title" content="Kivxxx - 我的個人網站">
-    <meta property="og:description" content="分享 DIY 專案、程式作品和技術心得的個人網站">
-    <meta property="og:image" content="https://kivxxx.github.io/photo.png">
-    <meta property="og:url" content="https://kivxxx.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh_TW">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">    <meta name="twitter:title" content="Kivxxx - 我的個人網站">
-    <meta name="twitter:description" content="分享 DIY 專案、程式作品和技術心得">
-    <meta name="twitter:image" content="https://kivxxx.github.io/photo.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://kivxxx.github.io/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./photo.png">
-    <link rel="apple-touch-icon" href="./photo.png">
-    
-    <!-- Stylesheets -->    <link rel="stylesheet" href="./style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Kiv",        "url": "https://kivxxx.github.io/",
-        "image": "https://kivxxx.github.io/photo.png",
-        "description": "DIY 愛好者與程式開發者，專注於創客專案和網頁開發",
-        "knowsAbout": ["Arduino", "Python", "JavaScript", "DIY", "3D列印", "網頁開發"]
-    }
-    </script>
-    
-    <!-- Core JavaScript Files -->
-    <script src="./js/config.js"></script>
-    <script src="./js/components.js"></script>
-    <script src="./js/updates.js"></script>
-    <script src="./js/app.js"></script>
+    <title>Kiv's Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation will be dynamically inserted -->
-    <header></header>    <main>
-        <section id="hero">
+    <div class="container">
+        <h1>Kiv's Portfolio</h1>
+        <p id="welcome-text"></p>
+        <section id="about" class="hero">
             <div class="hero-content">
-                <div class="profile-container">
-                    <div class="profile-photo">
-                        <img src="photo.png" alt="Kiv的個人照片">
-                    </div>
-                </div>
-                <h2>你好，我是 Kiv！</h2>
-                <p class="hero-description">這裡是我分享一些雜七雜八的地方。</p>
-                <div class="hero-buttons">
-                    <a href="about.html" class="btn btn-primary">了解更多</a>
-                    <a href="diy.html" class="btn btn-secondary">查看作品</a>
-                </div>
+                            <img src="assets/image/photo.png" alt="Profile Photo" class="profile-photo">
+                            <div class="hero-text">
+                                <h1>About Me</h1>
+                                <p>Graduated from the Department of Information Management at National Taiwan University of Science and Technology. Proficient in system establishment, full-stack web development, AI applications, and digital twins. Possesses excellent leadership and R&D capabilities, with extensive experience in multiple system development projects.</p>
+                            </div>            </div>
+        </section>
+        <section id="projects" class="section-block">
+            <div class="section-content">
+                <h2>Projects</h2>
+                <p>C:\PROJECTS&gt; dir</p>
+                <pre>
+<a href="projects/oht_layout_system.html">OHT_LAYOUT_SYSTEM</a>    An overhead hoist transport (OHT) layout creation system.
+<a href="projects/tkt_ntust_school_system.html">TKT_NTUST_SCHOOL_SYSTEM</a>    A school management system for NTUST.
+PROJECT_BETA     A command-line data processing tool.
+                </pre>
             </div>
         </section>
-
-        <section id="skills">
-            <h3><i class="fas fa-star"></i> 技能專長</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h4>程式開發</h4>
-                    <p>Python, JavaScript, Web開發</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-hammer"></i>
-                    <h4>DIY 製作</h4>
-                    <p>木工, 3D列印, 機器架構</p>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-cogs"></i>
-                    <h4>創新思維</h4>
-                    <p>問題解決, 產品設計</p>
-                </div>
-            </div>        </section>
-        
-        <section id="latest-updates">
-            <h3><i class="fas fa-clock"></i> 最新動態</h3>
-            <div class="updates-grid loading">
-                <!-- 动态内容将通过 JavaScript 加载 -->
+        <section id="contact" class="section-block">
+            <div class="section-content">
+                <h2>Contact Me</h2>
+                <p>Email: <a href="mailto:tung.charon@gmail.com">tung.charon@gmail.com</a></p>
             </div>
         </section>
-        
-        <section id="contact">
-            <h3><i class="fas fa-envelope"></i> 聯絡方式</h3>
-            <!-- Contact links will be dynamically inserted -->
-            <div class="contact-links"></div>
-        </section>
-    </main>
-
-    <!-- Footer will be dynamically inserted -->
-    <footer></footer>
+    </div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
