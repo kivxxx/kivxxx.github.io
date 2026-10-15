@@ -1,45 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant" data-theme="dark">
 <head>
-    <title>Kiv's Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kiv | Engineer Portfolio</title>
+  <meta name="description" content="Kiv 的個人作品集：Python、SQL、Java、Omniverse、機器人與自動化物流、半導體自動化。">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Kiv's Portfolio</h1>
-        <p id="welcome-text"></p>
-        <section id="about" class="hero">
-            <div class="hero-content">
-                            <img src="assets/image/photo.png" alt="Profile Photo" class="profile-photo">
-                            <div class="hero-text">
-                                <h1>About Me</h1>
-                                <p>Graduated from the Department of Information Management at National Taiwan University of Science and Technology. Proficient in system establishment, full-stack web development, AI applications, and digital twins. Possesses excellent leadership and R&D capabilities, with extensive experience in multiple system development projects.</p>
-                            </div>            </div>
-        </section>
-        <section id="projects" class="section-block">
-            <div class="section-content">
-                <h2>Projects</h2>
-                <p>C:\PROJECTS&gt; dir</p>
-                <pre>
-<a href="projects/oht_layout_system.html">OHT_LAYOUT_SYSTEM</a>    An overhead hoist transport (OHT) layout creation system.
-<a href="projects/tkt_ntust_school_system.html">TKT_NTUST_SCHOOL_SYSTEM</a>    A school management system for NTUST.
-PROJECT_BETA     A command-line data processing tool.
-                </pre>
-            </div>
-        </section>
-        <section id="skills" class="section-block">
-            <div class="section-content">
-                <h2>Skills</h2>
-                <p>Python, JavaScript, C#, VisualBasic, MS SQL, Omniverse, Golang</p>
-            </div>
-        </section>
-        <section id="contact" class="section-block">
-            <div class="section-content">
-                <h2>Contact Me</h2>
-                <p>Email: <a href="mailto:tung.charon@gmail.com">tung.charon@gmail.com</a></p>
-            </div>
-        </section>
+  <nav>
+    <div class="wrap">
+      <a class="logo" href="#top">kiv@portfolio:~$</a>
+      <a class="nl" href="#about">About</a>
+      <a class="nl" href="#lab">Lab</a>
+      <a class="nl" href="#skills">Skills</a>
+      <a class="nl" href="#projects">Projects</a>
+      <a class="nl" href="#terminal">Terminal</a>
+      <a class="nl" href="#contact">Contact</a>
+      <button class="iconbtn" id="themeBtn" title="切換主題">☾</button>
     </div>
-    <script src="assets/js/script.js"></script>
+  </nav>
+
+  <main class="wrap" id="top">
+    <header class="hero">
+      <div>
+        <div class="hello">// hello, world</div>
+        <h1>我是 <span id="nameH"></span></h1>
+        <div class="role"><span id="role"></span><span class="cursor">&nbsp;</span></div>
+        <p class="bio" id="bio"></p>
+        <div class="btns">
+          <a class="btn" href="#projects">▶ 看作品</a>
+          <a class="btn ghost" href="#contact">✉ 聯絡我</a>
+          <button class="btn ghost" id="randBtn">🎲 隨機彩蛋</button>
+        </div>
+      </div>
+      <div class="avatar" id="avatar" title="點我">
+        <img src="assets/image/photo.png" alt="Kiv">
+        <span class="tip" id="avatarTip">click me ✨</span>
+      </div>
+    </header>
+    <div class="stats" id="stats"></div>
+
+    <section id="about" class="rv">
+      <h2>about</h2>
+      <p class="sub">關於我</p>
+      <div class="about-grid">
+        <div class="card">
+          <p id="bio2"></p>
+          <p style="margin-top:12px;color:var(--muted)">我喜歡把複雜的現場問題（路徑衝突、派工、資料一致性）拆成可驗證的小模組，再用視覺化把它們講清楚。</p>
+        </div>
+        <ul class="timeline card" id="timeline"></ul>
+      </div>
+    </section>
+
+    <section id="lab" class="rv">
+      <h2>lab: path_finder</h2>
+      <p class="sub">互動小遊戲：在格子上畫牆壁，讓 AMR / OHT 機器人用 A* 找路。拖曳綠色起點與紅色終點也可以。</p>
+      <div class="lab">
+        <canvas id="grid" width="720" height="440"></canvas>
+        <div class="ctrl">
+          <div id="labInfo">ready.</div>
+          <button class="btn" id="runBtn">▶ 執行尋路</button>
+          <button class="btn ghost" id="mazeBtn">🧱 隨機障礙</button>
+          <button class="btn ghost" id="clearBtn">🧹 清除</button>
+          <label>演算法
+            <select id="algo" class="btn ghost" style="font-family:inherit">
+              <option value="astar">A*</option><option value="dijkstra">Dijkstra</option><option value="bfs">BFS</option>
+            </select>
+          </label>
+          <label>動畫速度<input type="range" id="speed" min="1" max="10" value="6"></label>
+          <div class="legend">
+            <i style="background:#3ddc97"></i>起點 <i style="background:#ff5c6c"></i>終點<br>
+            <i style="background:#4cc9f0"></i>已探索 <i style="background:#ffb454"></i>最佳路徑
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="rv">
+      <h2>skills</h2>
+      <p class="sub">技能（滑過或點擊標籤試試看）</p>
+      <div class="skills" id="skillBox"></div>
+    </section>
+
+    <section id="projects" class="rv">
+      <h2>projects</h2>
+      <p class="sub">作品展示：點卡片看詳細說明。虛線「+」卡片是預留給新作品的欄位。</p>
+      <div class="filters" id="filters"></div>
+      <div class="projects" id="projBox"></div>
+    </section>
+
+    <section id="terminal" class="rv">
+      <h2>terminal</h2>
+      <p class="sub">這裡有個小終端機，輸入 <b class="mono">help</b> 看看能做什麼。</p>
+      <div class="term">
+        <div class="bar2"><i></i><i></i><i></i>&nbsp; kiv@portfolio</div>
+        <div id="termOut"></div>
+        <div class="row"><span>$</span><input id="termIn" autocomplete="off" spellcheck="false" placeholder="type a command..."></div>
+      </div>
+    </section>
+
+    <section id="contact" class="rv">
+      <h2>contact</h2>
+      <p class="sub">想合作、聊技術或交流都歡迎。</p>
+      <div class="contact" id="contactBox"></div>
+    </section>
+
+    <footer>© <span id="year"></span> Kiv · built by hand with HTML / CSS / JS · 試試 ↑↑↓↓←→←→BA</footer>
+  </main>
+
+  <div class="modal" id="modal"><div class="card" id="modalBody"></div></div>
+  <div class="toast" id="toast"></div>
+  <canvas id="fx"></canvas>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
